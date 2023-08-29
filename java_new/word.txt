@@ -1,0 +1,2 @@
+Word [word=apple, mean=사과]
+Word [word=banana, mean=바나나]
