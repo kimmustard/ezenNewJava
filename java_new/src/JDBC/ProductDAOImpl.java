@@ -37,7 +37,8 @@ public class ProductDAOImpl implements DAO {
 			pst.setInt(2, p.getPrice());
 			pst.setString(3, p.getMadeby());
 			//excuteQuery() <<결과값 리턴
-			//insert, update, delete => executeUpdate() return int
+			//insert, update, delete => executeUpdate() return 건수 int값 반환
+			//CREATE / DROP 관련 구문에서는 -1 을 반환
 			return pst.executeUpdate();
 			
 			
@@ -105,6 +106,49 @@ public class ProductDAOImpl implements DAO {
 		}
 		
 		return null;
+	}
+
+
+	@Override
+	public int update(Product p) {
+		System.out.println("modify DAO success!!");
+		//UPDATE table_name SET name = '테스트 변경', country = '대한민국' WHERE id = 1105;
+		query = "update product set pname = ?, madeby = ?, price = ? where pno = ?";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setString(1, p.getPname());
+			pst.setString(2, p.getMadeby());
+			pst.setInt(3, p.getPrice());
+			pst.setInt(4, p.getPno());
+			return pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			System.out.println("update error");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+
+	@Override
+	public int delete(int pno) {
+		System.out.println("delete DAO success!!");
+		//delete from product where pno = ?
+		query = "delete from product where pno = ?";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setInt(1, pno);
+			return pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("delete error");
+			e.printStackTrace();
+		}
+		
+		return 0;
 	}
 	
 	

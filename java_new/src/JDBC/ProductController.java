@@ -59,11 +59,38 @@ public class ProductController {
 
 	private void remove() {
 		
+		//삭제 
+		System.out.println("변경할 상품번호>>");
+		int pno = scan.nextInt();
+		
+		
+		int isOk = svc.delete(pno);
+		
+		System.out.println("상품삭제" +((isOk > 0) ? "성공" : "실패" ));
 	}
 
 
 	private void modify() {
+		// 수정 ? update set 
+		//UPDATE table_name SET name = '테스트 변경', country = '대한민국' WHERE id = 1105;
+		System.out.println("변경할 상품번호>>");
+		int pno = scan.nextInt();
 		
+		System.out.println("변경할 상품명>>");
+		String pname = scan.next();
+		
+		System.out.println("변경할 상품상세정보>>");
+		scan.nextLine();
+		String madeby = scan.nextLine();
+		
+		System.out.println("변경할 상품가격>>");
+		int price = scan.nextInt();
+		
+		Product p = new Product(pno, pname, madeby, price);
+		
+		int isOk = svc.modify(p);
+		
+		System.out.println("상품등록" +((isOk > 0) ? "성공" : "실패" ));
 	}
 
 
@@ -89,8 +116,6 @@ public class ProductController {
 		}
 		
 		
-		
-		
 	}
 
 
@@ -110,9 +135,8 @@ public class ProductController {
 		// 잘되면 1을 리턴, 안되면 0을 리턴
 		int isOk = svc.register(p);
 	
-		System.out.println("상품등록" +((isOk > 0) ? "성공" : "실패" ));
-		
-		
+		System.out.println("상품수정" +((isOk > 0) ? "성공" : "실패" ));
+			
 		
 	}
 	

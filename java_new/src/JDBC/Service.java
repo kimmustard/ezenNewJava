@@ -9,6 +9,10 @@ public interface Service {
 	List<Product> list();
 
 	Product detail(int pno);
+	
+	int modify(Product p);
+
+	int delete(int pno);
 
 
 	
