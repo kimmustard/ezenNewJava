@@ -71,8 +71,10 @@ public class ProductController {
 
 
 	private void modify() {
+		//pno에 해당하는 객체를 수정(pname, price, madeby)
+		
 		// 수정 ? update set 
-		//UPDATE table_name SET name = '테스트 변경', country = '대한민국' WHERE id = 1105;
+		//UPDATE 테이블네임 set 튜플="변경내용" where 조건
 		System.out.println("변경할 상품번호>>");
 		int pno = scan.nextInt();
 		
@@ -90,7 +92,7 @@ public class ProductController {
 		
 		int isOk = svc.modify(p);
 		
-		System.out.println("상품등록" +((isOk > 0) ? "성공" : "실패" ));
+		System.out.println("상품수정" +((isOk > 0) ? "성공" : "실패" ));
 	}
 
 
@@ -135,7 +137,7 @@ public class ProductController {
 		// 잘되면 1을 리턴, 안되면 0을 리턴
 		int isOk = svc.register(p);
 	
-		System.out.println("상품수정" +((isOk > 0) ? "성공" : "실패" ));
+		System.out.println("상품등록" +((isOk > 0) ? "성공" : "실패" ));
 			
 		
 	}

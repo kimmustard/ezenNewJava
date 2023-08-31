@@ -1,0 +1,30 @@
+
+
+board 테이블
+번호 bno
+제목 title
+내용 content
+작성자 writer
+작성일 regdate;
+수정날짜 moddate;
+조회수readcount; (시퀀스로 따로 증가)
+
+
+
+create table board(
+bno int auto_increment,
+title varchar(200) not null,
+writer varchar(100) not null,
+content text,
+regdate datetime default now(),
+moddate datetime default now(),
+readcount int default 0,
+primary key(bno));
+
+
+메뉴
+1. 글쓰기 2.글목록보기 3.게시글조회 하나의게시글 시퀀스 
+
+4.게시글 수정 5게시글삭제 6종료
+
+

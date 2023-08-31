@@ -113,7 +113,8 @@ public class ProductDAOImpl implements DAO {
 	public int update(Product p) {
 		System.out.println("modify DAO success!!");
 		//UPDATE table_name SET name = '테스트 변경', country = '대한민국' WHERE id = 1105;
-		query = "update product set pname = ?, madeby = ?, price = ? where pno = ?";
+		//regdate = now() 현재 시간값으로 정렬
+		query = "update product set pname = ?, madeby = ?, regdate=now() , price = ? where pno = ?";
 		try {
 			pst = conn.prepareStatement(query);
 			pst.setString(1, p.getPname());
@@ -123,7 +124,7 @@ public class ProductDAOImpl implements DAO {
 			return pst.executeUpdate();
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
+			// Connection연결 오류 or SQL 구문 오류일때 예외발생
 			System.out.println("update error");
 			e.printStackTrace();
 		}
@@ -142,7 +143,7 @@ public class ProductDAOImpl implements DAO {
 			pst.setInt(1, pno);
 			return pst.executeUpdate();
 			
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			// TODO: handle exception
 			System.out.println("delete error");
 			e.printStackTrace();
