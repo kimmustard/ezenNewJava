@@ -27,7 +27,7 @@ public class DatabaseConnection {
 		
 		try {
 			Class.forName(jdbcDriver); //드라이버를 로드하기위해 사용되는 메서드
-			conn = DriverManager.getConnection(jdbcUrl, "root", "1234"); //url을 연결하기 위한 메서드 url ,user,  password
+			conn = DriverManager.getConnection(jdbcUrl, "mysqluser", "mysql"); //url을 연결하기 위한 메서드 url ,user,  password
 			
 		} catch (ClassNotFoundException e) {
 			// TODO: handle exception

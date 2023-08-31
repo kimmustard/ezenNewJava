@@ -1,4 +1,4 @@
-package JDBCboard;
+package ezenSubject.JDBCboard.pj;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -62,6 +62,7 @@ public class BoardDAOImpl implements DAO {
 						rs.getInt("bno"),
 						rs.getString("title"),
 						rs.getString("writer"),
+						rs.getString("content"),
 						rs.getString("regdate"),
 						rs.getInt("readcount")));
 		}

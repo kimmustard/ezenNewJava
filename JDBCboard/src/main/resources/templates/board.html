@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"	>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            width: 100%;
+        }
+
+        .boardContainer {
+            margin: 100px;
+            width: 1000px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="boardContainer">
+      
+
+			글목록
+			<hr class="my-4">
+			<div>
+				<table class="table">
+					<thead>
+					
+					</thead>
+					<tbody>
+						<tr th:each="BoardVO : ${BoardVO}">
+							<td th:text="${BoardVO.bno}">회원id</td>
+							<td th:text="${BoardVO.title}">제목</td>
+							<td th:text="${BoardVO.writer}">작성자</td>
+							<td th:text="${BoardVO.content}">글내용</td>
+							<td th:text="${BoardVO.regdate}">글작성시간</td>
+							<td th:text="${BoardVO.readcount}">조회수</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+	
+        <form action="writer.html" method="post">
+            <button type="submit"> 글쓰기 </button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-package JDBCboard;
+package ezenSubject.JDBCboard.pj;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +18,7 @@ public class DatabaseConnection {
 		try {
 			
 			Class.forName(jdbcDriver);
-			conn = DriverManager.getConnection(jdbcUrl, "mysqluser", "mysql");
+			conn = DriverManager.getConnection(jdbcUrl, "root", "1234");
 			
 		} catch (ClassNotFoundException e) {
 			

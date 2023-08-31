@@ -1,4 +1,4 @@
-package JDBCboard;
+package ezenSubject.JDBCboard.pj;
 
 import java.util.List;
 

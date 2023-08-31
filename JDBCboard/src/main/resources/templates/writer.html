@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            width: 100%;
+        }
+
+        .boardContainer {
+            margin: 100px;
+            width: 1000px;
+            border: 2px solid black;
+        }
+
+        #title {
+            width: 300px;
+            height: 50px;
+        }
+
+        #content {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="boardContainer">
+        <form action="board" method="post">
+            <div>
+
+                <div> 글제목 : <input type="text" id="title"></div>
+                <div> 작성자 : <input type="text" id="writer"></div>
+                <div> 내용 : <input type="text" id="content"></div>
+
+            </div>
+            <button type="submit"> 완료 </button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

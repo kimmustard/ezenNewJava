@@ -1,4 +1,4 @@
-package JDBCboard;
+package ezenSubject.JDBCboard.pj;
 
 public class BoardVO {
 
@@ -37,10 +37,11 @@ public class BoardVO {
 
 
 	//전체조회
-	public BoardVO(int bno, String title, String writer, String regdate, int readcount) {
+	public BoardVO(int bno, String title, String writer,String content , String regdate, int readcount) {
 		this.bno = bno;
 		this.title = title;
 		this.writer = writer;
+		this.content = content;
 		this.regdate = regdate;
 		this.readcount = readcount;
 	}

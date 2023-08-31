@@ -18,7 +18,7 @@ public class DatabaseConnection {
 		try {
 			
 			Class.forName(jdbcDriver);
-			conn = DriverManager.getConnection(jdbcUrl, "root", "1234");
+			conn = DriverManager.getConnection(jdbcUrl, "mysqluser", "mysql");
 			
 		} catch (ClassNotFoundException e) {
 			
